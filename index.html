@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navigation">
+
+            <div class="name">
+                <span>
+                    Akshay Sharma
+                </span>
+            </div>
+            <div class="list">
+
+                <ul>
+                    <a href="">
+                        <li class="items">About</li>
+                    </a>
+                    <a href="">
+                        <li class="items">Skills</li>
+                    </a>
+                    <a href="">
+                        <li class="items">Projects</li>
+                    </a>
+                    <a href="">
+                        <li class="items">Get in Touch</li>
+                    </a>
+                    <div class="theme">
+                        <img id="iconp" onclick="changetheme()" src="sun.png" alt="" >  
+                    <img id="iconpm" onclick="changetheme()" src="moon.png" alt="">  
+                </div>
+                </ul>
+            </div>
+            <div class="ham_menu ">
+                <div class="ham"  onclick="open_list()">
+                    <i class="fa fa-light fa-burger"></i>
+                </div>
+                <div id="is-active">
+                    <ul>
+                        <a href="">
+                            <li class="items">About</li>
+                        </a>
+                        <a href="">
+                            <li class="items">Skills</li>
+                        </a>
+                        <a href="">
+                            <li class="items">Projects</li>
+                        </a>
+                        <a href="">
+                            <li class="items">Get in Touch</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="theme"  >
+                    <img id="iconm" onclick="changetheme()" src="sun.png" alt="" >  
+                    <img id="iconmm" onclick="changetheme()" src="moon.png" alt="">                   
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main_container" id="home">
+        <div class="intro">
+            <div class="container">
+
+                <div class="image" title="Akshay Sharma">
+                    <img class="shape" src="me_1.png" alt="">
+                </div>
+                <div class="text">Hello, There
+                    <h1>I'm <span>A</span><span class="type"></span></h1>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <div class="second_container" id="skills">
+        <div class="skills">
+            <div class="span_text">
+                <span class="skills_text">
+                    SKILLS
+                </span>
+            </div>
+            <div class="skill_list">
+                <div class="languages">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16"></script>
+    <script>
+        var typed = new Typed(".type", {
+            strings: ["kshay Sharma", "&nbsp; Developer"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        })
+    </script>
+    <script>
+        function changetheme(){
+            // var image = document.getElementById("iconm");
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                console.log("Dark theme");
+                // for mobile
+                document.getElementById("iconmm").style.zIndex = "-1" 
+                document.getElementById("iconm").style.zIndex = "1"
+
+                // for PC
+                document.getElementById("iconpm").style.zIndex = "-1" 
+                document.getElementById("iconp").style.zIndex = "1"
+            }
+            else{
+                console.log("light theme");
+                // for mobile
+                document.getElementById("iconmm").style.zIndex = "1" 
+                document.getElementById("iconm").style.zIndex = "-1"
+
+                // for PC
+                document.getElementById("iconpm").style.opacity = "1" 
+                document.getElementById("iconp").style.zIndex = "-1"
+            }
+        }
+    </script>
+</body>
+
+</html>
