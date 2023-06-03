@@ -252,10 +252,13 @@ body {
         flex-direction: column;
     }
 
-    .text {
+  .text {
         position: absolute;
-        left: -10px;
+        left: 0px;
         top: 120%;
+    }
+    .text h1{
+        font-size: 30px;
     }
 
     .container .image img {
